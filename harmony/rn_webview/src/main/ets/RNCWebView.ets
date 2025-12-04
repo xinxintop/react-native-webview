@@ -475,8 +475,8 @@ export struct RNCWebView {
           scrollForward: this.nestedScroll,
           scrollBackward: this.nestedScroll,
         })
-        .onLoadStarted(() => this.onPageBegin())
-        .onLoadFinished(() => this.onPageEnd())
+        .onPageBegin(() => this.onPageBegin())
+        .onPageEnd(() => this.onPageEnd())
         .onErrorReceive((event: OnErrorReceiveEvent) => this.webViewBaseOperate?.emitLoadingError(event))
         .onHttpErrorReceive((event: OnHttpErrorReceiveEvent) => this.webViewBaseOperate?.emitHttpError(event))
         .onControllerAttached(() => this.controllerAttachedInit())
